@@ -1,0 +1,49 @@
+{% extends 'registration/base.html' %}
+
+{% load i18n %}
+
+{% block content %}
+    {% if form.errors %}
+         <div class="red card-panel">
+            <span class="white-text text-darken-2">
+                {% trans "Username and password didn't match." %}
+            </span>
+        </div>
+    {% elif next %}
+        <div class="card-panel">
+            <span class="red-text text-darken-2">
+                {% if user.is_authenticated %}
+                    {% trans "Your account doesn't have access to this page. To proceed, please login with an account that has access." %}
+                {% else %}
+                    {% trans "Please login to see this page." %}
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+
+    <div class='row'>
+        <div class="card-panel">
+            {% load material_form %}
+            <form method="post" action="{% url 'login' %}"> 
+                {% csrf_token %}
+                <div>
+                    <td>{{ form.username.label_tag }}</td>
+                    <td>{{ form.username }}</td>
+                </div>
+                <div>
+                    <td>{{ form.password.label_tag }}</td>
+                    <td>{{ form.password }}</td>
+                </div>
+
+                <div id='button-container'>
+                    <input type="submit" class="btn waves-effect waves-light" value="login" />
+                    <input type="hidden" name="next" value="/classes" />
+                    {% if is_email_configured %}
+                        <a id='lost-password' href="{% url 'password_reset' %}">{% trans 'Forgot password?' %}</a>
+                    {% endif %}
+                </div>
+            </form>
+        </div>
+        
+    </div>
+{% endblock %}
