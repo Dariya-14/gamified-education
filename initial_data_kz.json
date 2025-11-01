@@ -1,0 +1,479 @@
+[
+  {
+    "model": "course.instructor",
+    "pk": 1,
+    "fields": {
+      "user": 2,
+      "full_name": "Преподаватель 1"
+    }
+  },
+  {
+    "model": "course.instructor",
+    "pk": 2,
+    "fields": {
+      "user": 3,
+      "full_name": "Преподаватель 2"
+    }
+  },
+  {
+    "model": "course.instructor",
+    "pk": 3,
+    "fields": {
+      "user": 4,
+      "full_name": "Преподаватель 3"
+    }
+  },
+  {
+    "model": "course.instructor",
+    "pk": 4,
+    "fields": {
+      "user": 5,
+      "full_name": "Преподаватель 4"
+    }
+  },
+  {
+    "model": "course.instructor",
+    "pk": 5,
+    "fields": {
+      "user": 6,
+      "full_name": "Преподаватель 5"
+    }
+  },
+
+  {
+    "model": "course.course",
+    "pk": 1,
+    "fields": {
+      "name": "Теоретическая база (Критическое Мышление)",
+      "code": "TBM-2025",
+      "description": "Epic 1. Исследование научных основ и методов внеклассного образования.",
+      "primary_hex_color": "#0062b2",
+      "secondary_hex_color": "#ff9800"
+    }
+  },
+  {
+    "model": "course.course",
+    "pk": 2,
+    "fields": {
+      "name": "Индивидуализация Обучения",
+      "code": "IOB-2025",
+      "description": "Epic 2. Построение траекторий и определение интересов учащихся.",
+      "primary_hex_color": "#2196f3",
+      "secondary_hex_color": "#ffc107"
+    }
+  },
+  {
+    "model": "course.course",
+    "pk": 3,
+    "fields": {
+      "name": "ИИ и Персонализация",
+      "code": "AIP-2025",
+      "description": "Epic 3. Разработка ИИ-системы рекомендаций и базы данных ресурсов.",
+      "primary_hex_color": "#03a9f4",
+      "secondary_hex_color": "#ff9800"
+    }
+  },
+  {
+    "model": "course.course",
+    "pk": 4,
+    "fields": {
+      "name": "Цифровые Инструменты",
+      "code": "CIT-2025",
+      "description": "Epic 4. Разработка набора упражнений и адаптация их под возрастные группы.",
+      "primary_hex_color": "#00bcd4",
+      "secondary_hex_color": "#ff5722"
+    }
+  },
+  {
+    "model": "course.course",
+    "pk": 5,
+    "fields": {
+      "name": "Платформа и Геймификация",
+      "code": "PLG-2025",
+      "description": "Epic 5. Создание образовательной платформы с элементами геймификации и интеграция ИИ.",
+      "primary_hex_color": "#4caf50",
+      "secondary_hex_color": "#ffeb3b"
+    }
+  },
+
+  {
+    "model": "course.assignment",
+    "pk": 1,
+    "fields": {
+      "name": "1-Модуль: Ақпаратты Талдау",
+      "description": "Сыни ойлауды дамытуға арналған жаттығулар.",
+      "course": 1,
+      "is_optional": false
+    }
+  },
+  {
+    "model": "course.assignment",
+    "pk": 2,
+    "fields": {
+      "name": "2-Модуль: Логикалық Есептер",
+      "description": "Күрделі логикалық басқатырғыштар.",
+      "course": 1,
+      "is_optional": false
+    }
+  },
+  {
+    "model": "course.assignment",
+    "pk": 3,
+    "fields": {
+      "name": "Тапсырма: Django негіздері",
+      "description": "Базалық Django жобасын орнату.",
+      "course": 2,
+      "is_optional": false
+    }
+  },
+  {
+    "model": "course.assignment",
+    "pk": 4,
+    "fields": {
+      "name": "Тапсырма: ЖИ үшін Деректер Жинау",
+      "description": "Epic 3: Жасанды интеллект моделі үшін тест деректерін жасау.",
+      "course": 3,
+      "is_optional": false
+    }
+  },
+  {
+    "model": "course.assignment",
+    "pk": 5,
+    "fields": {
+      "name": "Тапсырма: Платформаны Жобалау",
+      "description": "Epic 5: LMS архитектурасын әзірлеу.",
+      "course": 4,
+      "is_optional": false
+    }
+  },
+
+  {
+    "model": "course.task",
+    "pk": 1,
+    "fields": {
+      "name": "Тапсырма 1.1: Ақпарат Көздерін Тексеру",
+      "description": "Определите фейковые новости в трех источниках.",
+      "course": 1
+    }
+  },
+  {
+    "model": "course.task",
+    "pk": 2,
+    "fields": {
+      "name": "Тапсырма 1.2: Дәлелдерді Талдау",
+      "description": "Разложите статью на тезисы и аргументы.",
+      "course": 1
+    }
+  },
+  {
+    "model": "course.task",
+    "pk": 3,
+    "fields": {
+      "name": "Тапсырма 2.1: Эйнштейн Жұмбағы",
+      "description": "Решите знаменитую логическую загадку.",
+      "course": 1
+    }
+  },
+  {
+    "model": "course.task",
+    "pk": 4,
+    "fields": {
+      "name": "Тапсырма 3.1: Django-да «Сәлем Әлем»",
+      "description": "Запустите свое первое приложение Django.",
+      "course": 2
+    }
+  },
+  {
+    "model": "course.task",
+    "pk": 5,
+    "fields": {
+      "name": "Тапсырма 4.1: 1000 Жазба Жинау",
+      "description": "Соберите 1000 строк данных для обучения ИИ-модели.",
+      "course": 3
+    }
+  },
+  {
+    "model": "course.task",
+    "pk": 6,
+    "fields": {
+      "name": "Тапсырма 5.1: Басты Беттің Wireframe-і",
+      "description": "Нарисуйте схему главной страницы LMS.",
+      "course": 4
+    }
+  },
+
+  {
+    "model": "course.student",
+    "pk": 1,
+    "fields": {
+      "user": 7,
+      "full_name": "Студент 1",
+      "id_number": "100000000001"
+    }
+  },
+  {
+    "model": "course.student",
+    "pk": 2,
+    "fields": {
+      "user": 8,
+      "full_name": "Студент 2",
+      "id_number": "100000000002"
+    }
+  },
+  {
+    "model": "course.student",
+    "pk": 3,
+    "fields": {
+      "user": 9,
+      "full_name": "Студент 3",
+      "id_number": "100000000003"
+    }
+  },
+  {
+    "model": "course.student",
+    "pk": 4,
+    "fields": {
+      "user": 10,
+      "full_name": "Студент 4",
+      "id_number": "100000000004"
+    }
+  },
+  {
+    "model": "course.student",
+    "pk": 5,
+    "fields": {
+      "user": 11,
+      "full_name": "Студент 5",
+      "id_number": "100000000005"
+    }
+  },
+  {
+    "model": "course.student",
+    "pk": 6,
+    "fields": {
+      "user": 12,
+      "full_name": "Студент 6",
+      "id_number": "100000000006"
+    }
+  },
+  {
+    "model": "course.student",
+    "pk": 7,
+    "fields": {
+      "user": 13,
+      "full_name": "Студент 7",
+      "id_number": "100000000007"
+    }
+  },
+  {
+    "model": "course.student",
+    "pk": 8,
+    "fields": {
+      "user": 14,
+      "full_name": "Студент 8",
+      "id_number": "100000000008"
+    }
+  },
+  {
+    "model": "course.student",
+    "pk": 9,
+    "fields": {
+      "user": 15,
+      "full_name": "Студент 9",
+      "id_number": "100000000009"
+    }
+  },
+  {
+    "model": "course.student",
+    "pk": 10,
+    "fields": {
+      "user": 16,
+      "full_name": "Студент 10",
+      "id_number": "100000000010"
+    }
+  },
+  {
+    "model": "course.student",
+    "pk": 11,
+    "fields": {
+      "user": 17,
+      "full_name": "Студент 11",
+      "id_number": "100000000011"
+    }
+  },
+  {
+    "model": "course.student",
+    "pk": 12,
+    "fields": {
+      "user": 18,
+      "full_name": "Студент 12",
+      "id_number": "100000000012"
+    }
+  },
+  {
+    "model": "course.student",
+    "pk": 13,
+    "fields": {
+      "user": 19,
+      "full_name": "Студент 13",
+      "id_number": "100000000013"
+    }
+  },
+  {
+    "model": "course.student",
+    "pk": 14,
+    "fields": {
+      "user": 20,
+      "full_name": "Студент 14",
+      "id_number": "100000000014"
+    }
+  },
+  {
+    "model": "course.student",
+    "pk": 15,
+    "fields": {
+      "user": 21,
+      "full_name": "Студент 15",
+      "id_number": "100000000015"
+    }
+  },
+  {
+    "model": "course.student",
+    "pk": 16,
+    "fields": {
+      "user": 22,
+      "full_name": "Студент 16",
+      "id_number": "100000000016"
+    }
+  },
+  {
+    "model": "course.student",
+    "pk": 17,
+    "fields": {
+      "user": 23,
+      "full_name": "Студент 17",
+      "id_number": "100000000017"
+    }
+  },
+  {
+    "model": "course.student",
+    "pk": 18,
+    "fields": {
+      "user": 24,
+      "full_name": "Студент 18",
+      "id_number": "100000000018"
+    }
+  },
+  {
+    "model": "course.student",
+    "pk": 19,
+    "fields": {
+      "user": 25,
+      "full_name": "Студент 19",
+      "id_number": "100000000019"
+    }
+  },
+  {
+    "model": "course.student",
+    "pk": 20,
+    "fields": {
+      "user": 26,
+      "full_name": "Студент 20",
+      "id_number": "100000000020"
+    }
+  },
+
+  {
+    "model": "course.courseclass",
+    "pk": 1,
+    "fields": {
+      "code": "Топ 1",
+      "course": 1,
+      "start_date": "2025-01-01",
+      "end_date": "2025-06-01",
+      "ranking_size": 10,
+      "total_of_lives": 0
+    },
+    "students": [
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+    ]
+  },
+  {
+    "model": "course.courseclass",
+    "pk": 2,
+    "fields": {
+      "code": "Топ 2",
+      "course": 2,
+      "start_date": "2025-01-01",
+      "end_date": "2025-06-01",
+      "ranking_size": 10,
+      "total_of_lives": 0
+    },
+    "students": [
+      11, 12, 13, 14, 15, 16, 17, 18, 19, 20
+    ]
+  },
+  {
+    "model": "course.courseclass",
+    "pk": 3,
+    "fields": {
+      "code": "Топ 3",
+      "course": 3,
+      "start_date": "2025-01-01",
+      "end_date": "2025-06-01",
+      "ranking_size": 10,
+      "total_of_lives": 0
+    },
+    "students": [
+      1, 3, 5, 7, 9, 11, 13, 15, 17, 19
+    ]
+  },
+  {
+    "model": "course.courseclass",
+    "pk": 4,
+    "fields": {
+      "code": "Топ 4",
+      "course": 5,
+      "start_date": "2025-01-01",
+      "end_date": "2025-06-01",
+      "ranking_size": 10,
+      "total_of_lives": 0
+    },
+    "students": [
+      2, 4, 6, 8, 10, 12, 14, 16, 18, 20
+    ]
+  },
+
+ {
+    "model": "course.classinstructor",
+    "pk": 1,
+    "fields": {
+      "instructor": 1,
+      "course_class": 1
+    }
+  },
+  {
+    "model": "course.classinstructor",
+    "pk": 2,
+    "fields": {
+      "instructor": 2,
+      "course_class": 2
+    }
+  },
+  {
+    "model": "course.classinstructor",
+    "pk": 3,
+    "fields": {
+      "instructor": 3,
+      "course_class": 3
+    }
+  },
+  {
+    "model": "course.classinstructor",
+    "pk": 4,
+    "fields": {
+      "instructor": 5,
+      "course_class": 4
+    }
+  }
+]
