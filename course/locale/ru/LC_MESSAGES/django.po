@@ -1,0 +1,618 @@
+# Русский перевод для проекта Gamified Education.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-12 21:07-0300\n"
+# Убедитесь, что дата актуальна
+"PO-Revision-Date: 2025-10-28 00:00+0000\n" 
+# Замените на ваши данные
+"Last-Translator: Dariya <dbotagarina@gmail.com>\n" 
+"Language-Team: RU <ru@li.org>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+# Правила множественного числа для русского языка
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n" 
+
+# --- Переводы из course/apps.py ---
+#: course/apps.py:10 
+# (Предполагается, что вы добавили verbose_name)
+msgid "Курсы и Задания"
+msgstr "Курсы и Задания"
+
+# --- Переводы из course/admin.py ---
+#: course/admin.py:26
+#, python-format
+msgid "User %(username)s already has a password!"
+msgstr "У пользователя %(username)s уже есть пароль!"
+
+#: course/admin.py:32
+#, python-format
+msgid "User %(username)s has no email!"
+msgstr "У пользователя %(username)s нет электронной почты!"
+
+#: course/admin.py:47
+#, python-format
+msgid "%(count)d email sent successfully!"
+msgid_plural "%(count)d emails sent successfully!"
+msgstr[0] "%(count)d письмо отправлено успешно!"
+msgstr[1] "%(count)d письма отправлено успешно!"
+msgstr[2] "%(count)d писем отправлено успешно!"
+
+#: course/admin.py:55
+msgid "Send invitation to selected users"
+msgstr "Отправить приглашение выбранным пользователям"
+
+#: course/admin.py:60
+msgid "Has Password?"
+msgstr "Есть Пароль?"
+
+#: course/admin.py:68 course/admin.py:291
+msgid "Last Login"
+msgstr "Последний вход"
+
+#: course/admin.py:152
+msgid "Duplicate course class"
+msgstr "Дублировать класс курса"
+
+#: course/admin.py:158
+msgid "Refresh achievements"
+msgstr "Обновить достижения"
+
+# --- Переводы из course/forms/forms.py ---
+#: course/forms/forms.py:36
+msgid "Username / Email"
+msgstr "Имя пользователя / Эл. почта"
+
+# --- Переводы из course/models.py (verbose_name и ошибки) ---
+#: course/models.py:28
+msgid "Color format must be a # followed by 6 hexadecimal digits"
+msgstr "Формат цвета должен быть #, за которым следуют 6 шестнадцатеричных цифр"
+
+#: course/models.py:80 
+# (verbose_name для Course)
+msgid "Курс"
+msgstr "Курс"
+
+#: course/models.py:81 
+# (verbose_name_plural для Course)
+msgid "Курсы"
+msgstr "Курсы"
+
+#: course/models.py:99 
+# (verbose_name для CourseClass)
+msgid "Класс Курса"
+msgstr "Класс Курса"
+
+#: course/models.py:100 
+# (verbose_name_plural для CourseClass)
+msgid "Классы Курсов"
+msgstr "Классы Курсов"
+
+#: course/models.py:117
+msgid "End date cannot be earlier than start date"
+msgstr "Дата окончания не может быть раньше даты начала"
+
+#: course/models.py:141 
+# (verbose_name для Student)
+msgid "Студент"
+msgstr "Студент"
+
+#: course/models.py:142 
+# (verbose_name_plural для Student)
+msgid "Студенты"
+msgstr "Студенты"
+
+#: course/models.py:157 
+# (verbose_name для Enrollment)
+msgid "Запись на курс"
+msgstr "Запись на курс"
+
+#: course/models.py:158 
+# (verbose_name_plural для Enrollment)
+msgid "Записи на курсы"
+msgstr "Записи на курсы"
+
+#: course/models.py:173
+msgid ""
+"Lost lives cannot be greater than the total of lives of the course class"
+msgstr "Потерянные жизни не могут превышать общее количество жизней класса"
+
+#: course/models.py:207 
+# (verbose_name для Instructor)
+msgid "Преподаватель"
+msgstr "Преподаватель"
+
+#: course/models.py:208 
+# (verbose_name_plural для Instructor)
+msgid "Преподаватели"
+msgstr "Преподаватели"
+
+#: course/models.py:223 
+# (verbose_name для ClassInstructor)
+msgid "Преподаватель Класса"
+msgstr "Преподаватель Класса"
+
+#: course/models.py:224 
+# (verbose_name_plural для ClassInstructor)
+msgid "Преподаватели Классов"
+msgstr "Преподаватели Классов"
+
+#: course/models.py:237 
+# (verbose_name для Task)
+msgid "Задача"
+msgstr "Задача"
+
+#: course/models.py:238 
+# (verbose_name_plural для Task)
+msgid "Задачи"
+msgstr "Задачи"
+
+#: course/models.py:255 
+# (verbose_name для Assignment)
+msgid "Задание"
+msgstr "Задание"
+
+#: course/models.py:256 
+# (verbose_name_plural для Assignment)
+msgid "Задания"
+msgstr "Задания"
+
+#: course/models.py:280 
+# (verbose_name для AssignmentTask)
+msgid "Задача к заданию"
+msgstr "Задача к заданию"
+
+#: course/models.py:281 
+# (verbose_name_plural для AssignmentTask)
+msgid "Задачи к заданиям"
+msgstr "Задачи к заданиям"
+
+#: course/models.py:282
+msgid "Баллы (XP)"
+msgstr "Баллы (XP)"
+
+#: course/models.py:293
+msgid "Assignment, Task and Class must be from the same course"
+msgstr "Задание, Задача и Класс должны принадлежать одному курсу"
+
+#: course/models.py:307 
+# (verbose_name для Grade)
+msgid "Оценка"
+msgstr "Оценка"
+
+#: course/models.py:308 
+# (verbose_name_plural для Grade)
+msgid "Оценки"
+msgstr "Оценки"
+
+#: course/models.py:309
+msgid "Оценка (0-1)"
+msgstr "Оценка (0-1)"
+
+#: course/models.py:310
+msgid "Отменено"
+msgstr "Отменено"
+
+#: course/models.py:334
+msgid "Score must be an integer value, since the assignment task has no points"
+msgstr ""
+"Оценка должна быть целым числом, так как задача задания не имеет баллов"
+
+#: course/models.py:340
+msgid ""
+"Score must be a value between 0 and 1, representing the percentage of the "
+"assignment task points"
+msgstr ""
+"Оценка должна быть значением от 0 до 1, представляющим процент от баллов за "
+"задачу"
+
+#: course/models.py:358 
+# (verbose_name для Post)
+msgid "Публикация"
+msgstr "Публикация"
+
+#: course/models.py:359 
+# (verbose_name_plural для Post)
+msgid "Публикации"
+msgstr "Публикации"
+
+#: course/models.py:375 
+# (verbose_name для Widget)
+msgid "Виджет"
+msgstr "Виджет"
+
+#: course/models.py:376 
+# (verbose_name_plural для Widget)
+msgid "Виджеты"
+msgstr "Виджеты"
+
+#: course/models.py:417 
+# (verbose_name для Badge)
+msgid "Значок"
+msgstr "Значок"
+
+#: course/models.py:418 
+# (verbose_name_plural для Badge)
+msgid "Значки"
+msgstr "Значки"
+
+#: course/models.py:433 
+# (verbose_name для ClassBadge)
+msgid "Значок Класса"
+msgstr "Значок Класса"
+
+#: course/models.py:434 
+# (verbose_name_plural для ClassBadge)
+msgid "Значки Классов"
+msgstr "Значки Классов"
+
+#: course/models.py:438
+msgid "AND"
+msgstr "И"
+
+#: course/models.py:439
+msgid "OR"
+msgstr "ИЛИ"
+
+#: course/models.py:452
+msgid "Badge and Class must be from the same course"
+msgstr "Значок и Класс должны принадлежать одному курсу"
+
+#: course/models.py:465 
+# (verbose_name для ClassBadgeCriteria)
+msgid "Критерий Значка Класса"
+msgstr "Критерий Значка Класса"
+
+#: course/models.py:466 
+# (verbose_name_plural для ClassBadgeCriteria)
+msgid "Критерии Значков Классов"
+msgstr "Критерии Значков Классов"
+
+#: course/models.py:471
+msgid "percentage"
+msgstr "процент"
+
+#: course/models.py:471
+msgid "xp"
+msgstr "опыт"
+
+#: course/models.py:480
+msgid "Assignment and Task cannot be empty at the same time"
+msgstr "Задание и Задача не могут быть пустыми одновременно"
+
+#: course/models.py:489
+msgid "Assignment and Class Badge must be from the same course"
+msgstr "Задание и Значок Класса должны принадлежать одному курсу"
+
+#: course/models.py:497
+msgid "Task and Class Badge must be from the same course"
+msgstr "Задача и Значок Класса должны принадлежать одному курсу"
+
+#: course/models.py:507
+msgid ""
+"There is no Assignment Task with this Assignment and this Task for this "
+"Course Class"
+msgstr "Нет Задачи Задания с этим Заданием и этой Задачей для этого Класса"
+
+#: course/models.py:516 
+# (verbose_name для Achievement)
+msgid "Достижение"
+msgstr "Достижение"
+
+#: course/models.py:517 
+# (verbose_name_plural для Achievement)
+msgid "Достижения"
+msgstr "Достижения"
+
+#: course/models.py:527
+msgid "Enrollment and Class Badge must be from the same Course Class"
+msgstr "Запись и Значок Класса должны принадлежать одному Классу"
+
+#: course/models.py:531
+msgid "Задача"
+msgstr "Задача" # verbose_name для поля task в Question
+
+#: course/models.py:532
+msgid "Текст вопроса"
+msgstr "Текст вопроса"
+
+#: course/models.py:534
+msgid "Правильный ответ"
+msgstr "Правильный ответ"
+
+#: course/models.py:537
+msgid "Вопрос к тесту"
+msgstr "Вопрос к тесту"
+
+#: course/models.py:538
+msgid "Вопросы к тестам"
+msgstr "Вопросы к тестам"
+
+# --- Переводы из course/templates/ ---
+#: course/templates/course/assignments.html:7
+#: course/templates/course/base.html:79
+msgid "Assignments"
+msgstr "Задания"
+
+#: course/templates/course/assignments.html:14
+msgid "Select Student"
+msgstr "Выбрать Студента"
+
+#: course/templates/course/assignments.html:104
+msgid "(no points)"
+msgstr "(нет баллов)"
+
+#: course/templates/course/assignments.html:137
+msgid "CANCELED"
+msgstr "ОТМЕНЕНО"
+
+#: course/templates/course/base.html:76
+msgid "Home"
+msgstr "Главная"
+
+#: course/templates/course/base.html:85
+msgid "Logout"
+msgstr "Выход"
+
+#: course/templates/course/class.html:6
+msgid "Class"
+msgstr "Класс"
+
+#: course/templates/course/class.html:22
+#, python-format
+msgid "Top %(ranking_size)s"
+msgstr "Топ %(ranking_size)s"
+
+#: course/templates/course/class.html:28
+msgid "(no student has scored so far)"
+msgstr "(ни один студент еще не набрал баллов)"
+
+#: course/templates/course/class.html:40
+msgid "Show more..."
+msgstr "Показать больше..."
+
+#: course/templates/course/class.html:71
+msgid "Draft"
+msgstr "Черновик"
+
+#: course/templates/course/class.html:75
+msgid "Scheduled"
+msgstr "Запланировано"
+
+#: course/templates/course/class.html:79
+msgid "Pinned"
+msgstr "Закреплено"
+
+#: course/templates/course/classes.html:6
+msgid "My Classes"
+msgstr "Мои Классы"
+
+#: course/templates/course/classes.html:13
+msgid "Go to Admin"
+msgstr "Перейти в Админку"
+
+#: course/templates/course/classes.html:23
+msgid "You have no enrollments yet."
+msgstr "У вас нет активных записей."
+
+#: course/templates/course/classes.html:27
+msgid "Return to Login"
+msgstr "Вернуться ко входу"
+
+#: course/templates/course/classes.html:34
+msgid "Current Classes"
+msgstr "Текущие Классы"
+
+#: course/templates/course/classes.html:37
+msgid "Future Classes"
+msgstr "Будущие Классы"
+
+#: course/templates/course/classes.html:44
+msgid "Past Classes"
+msgstr "Прошедшие Классы"
+
+#: course/templates/course/error_page.html:6
+msgid "Error"
+msgstr "Ошибка"
+
+#: course/templates/course/error_page.html:14
+msgid "Page not found"
+msgstr "Страница не найдена"
+
+#: course/templates/course/error_page.html:18
+msgid "Return to Home Page"
+msgstr "Вернуться на Главную Страницу"
+
+#: course/templates/course/submit_assignment_form.html:8
+#: course/templates/course/diagnostic_test_form.html:8
+msgid "Сдать Задание"
+msgstr "Сдать Задание"
+
+#: course/templates/course/submit_assignment_form.html:11
+msgid "В этой упрощенной версии, при нажатии кнопки 'Сдать', вы получите полный балл."
+msgstr "В этой упрощенной версии, при нажатии кнопки 'Сдать', вы получите полный балл."
+
+#: course/templates/course/submit_assignment_form.html:12
+msgid "Максимально доступно XP"
+msgstr "Максимально доступно XP"
+
+#: course/templates/course/submit_assignment_form.html:20
+msgid "Ваш ответ / Комментарий (необязательно)"
+msgstr "Ваш ответ / Комментарий (необязательно)"
+
+#: course/templates/course/submit_assignment_form.html:24
+msgid "Сдать Задание и Получить XP"
+msgstr "Сдать Задание и Получить XP"
+
+#: course/templates/course/submit_assignment_form.html:29
+msgid "Отмена"
+msgstr "Отмена"
+
+#: course/templates/course/diagnostic_test_form.html:9
+msgid "Диагностический Тест"
+msgstr "Диагностический Тест"
+
+#: course/templates/course/diagnostic_test_form.html:11
+msgid "Пожалуйста, ответьте на следующие вопросы:"
+msgstr "Пожалуйста, ответьте на следующие вопросы:"
+
+#: course/templates/course/diagnostic_test_form.html:22
+msgid "Ваш ответ"
+msgstr "Ваш ответ"
+
+#: course/templates/course/diagnostic_test_form.html:26
+msgid "К сожалению, вопросы для этого теста еще не добавлены."
+msgstr "К сожалению, вопросы для этого теста еще не добавлены."
+
+#: course/templates/course/diagnostic_test_form.html:30
+msgid "Завершить Диагностику"
+msgstr "Завершить Диагностику"
+
+#: course/templates/course/diagnostic_test_form.html:33
+msgid "Отмена"
+msgstr "Отмена" # Добавлен перевод для отмены в диагностике
+
+# --- Переводы из email и registration ---
+#: course/templates/email/password_creation_email.html:7
+#: course/templates/registration/password_reset_email.html:7
+#, python-format
+msgid "Hello, %(first_name)s!"
+msgstr "Здравствуйте, %(first_name)s!"
+
+#: course/templates/email/password_creation_email.html:12
+#, python-format
+msgid ""
+"You are invited to use %(url)s, a platform to keep track of your course "
+"activities. Click the button below to create your password."
+msgstr ""
+"Вы приглашены использовать %(url)s, платформу для отслеживания вашей учебной "
+"деятельности. Нажмите кнопку ниже, чтобы создать пароль."
+
+#: course/templates/email/password_creation_email.html:17
+msgid "Create Password"
+msgstr "Создать Пароль"
+
+#: course/templates/email/password_creation_subject.txt:3
+msgid "Password Creation"
+msgstr "Создание Пароля"
+
+#: course/templates/registration/login.html:9
+msgid "Username and password didn't match."
+msgstr "Имя пользователя и пароль не совпадают."
+
+#: course/templates/registration/login.html:16
+msgid ""
+"Your account doesn't have access to this page. To proceed, please login with "
+"an account that has access."
+msgstr ""
+"Ваша учетная запись не имеет доступа к этой странице. Войдите с учетной "
+"записью, у которой есть доступ."
+
+#: course/templates/registration/login.html:18
+msgid "Please login to see this page."
+msgstr "Пожалуйста, войдите, чтобы увидеть эту страницу."
+
+#: course/templates/registration/login.html:42
+msgid "Forgot password?"
+msgstr "Забыли пароль?"
+
+#: course/templates/registration/password_reset_complete.html:9
+msgid ""
+"Your new password has been set. Go ahead and <a href='/login'>sign in</a> "
+"now."
+msgstr ""
+"Ваш новый пароль установлен. Можете <a href='/login'>войти</a> в систему."
+
+#: course/templates/registration/password_reset_confirm.html:29
+msgid "New Password"
+msgstr "Новый Пароль"
+
+#: course/templates/registration/password_reset_confirm.html:45
+msgid "Set Password"
+msgstr "Установить Пароль"
+
+#: course/templates/registration/password_reset_confirm.html:51
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used."
+msgstr ""
+"Ссылка для сброса пароля недействительна, возможно, она уже была использована."
+
+#: course/templates/registration/password_reset_confirm.html:54
+msgid "Please request a new password reset."
+msgstr "Пожалуйста, запросите новый сброс пароля."
+
+#: course/templates/registration/password_reset_done.html:9
+msgid ""
+"We've emailed you instructions for setting your password. You should receive "
+"them shortly."
+msgstr ""
+"Мы отправили вам инструкции для установки пароля по электронной почте. Вы "
+"должны получить их в ближайшее время."
+
+#: course/templates/registration/password_reset_done.html:12
+msgid ""
+"If you don't receive an email, please make sure you've entered the address "
+"you registered with, and check your spam folder."
+msgstr ""
+"Если вы не получили письмо, убедитесь, что ввели адрес, с которым "
+"регистрировались, и проверьте папку со спамом."
+
+#: course/templates/registration/password_reset_email.html:12
+#, python-format
+msgid ""
+"You have requested a password reset on %(url)s. Click the button below to "
+"proceed."
+msgstr ""
+"Вы запросили сброс пароля на %(url)s. Нажмите кнопку ниже, чтобы продолжить."
+
+#: course/templates/registration/password_reset_email.html:17
+#: course/templates/registration/password_reset_form.html:14
+msgid "Reset Password"
+msgstr "Сбросить Пароль"
+
+#: course/templates/registration/password_reset_form.html:25
+msgid "Submit"
+msgstr "Отправить"
+
+#: course/templates/registration/password_reset_form.html:32
+msgid "Submitting..."
+msgstr "Отправка..."
+
+#: course/templates/registration/password_reset_subject.txt:3
+msgid "Password Reset"
+msgstr "Сброс Пароля"
+
+# --- Переводы из course/views.py ---
+#: course/views.py:202 
+# (Http404 в show_diagnostic_test)
+msgid "Задание или Запись на курс не найдены"
+msgstr "Задание или Запись на курс не найдены"
+
+#: course/views.py:216 
+# (Http404 в show_diagnostic_test)
+msgid "Задание не найдено"
+msgstr "Задание не найдено"
+
+#: course/views.py:246 
+# (Http404 в submit_diagnostic_test)
+msgid "Задание или Запись на курс не найдены"
+msgstr "Задание или Запись на курс не найдены"
+
+#: course/views.py:344
+msgid "(description will show up when you earn this badge)"
+msgstr "(описание появится, когда вы получите этот значок)"
+
+# --- Устаревшие/удаленные строки ---
+#~ msgid "Top %(number_of_items)s"
+#~ msgstr "Top %(number_of_items)s"
+
+#~ msgid "Me"
+#~ msgstr "Eu"
