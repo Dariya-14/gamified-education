@@ -1,0 +1,165 @@
+{% extends "course/base.html" %}
+
+{% load i18n %}
+{% load badges_helper %}
+
+{% block title %}
+    {% trans 'Assignments' %}
+{% endblock %}
+
+{% block content %}
+    {% if students_data != None %}
+        <div class='center-container-for-button'>
+            <a class='dropdown-trigger btn grey lighten-3 grey-text text-darken-3' href='#students-dropdown' data-target='students-dropdown'>
+                {% trans 'Select Student' %}
+            </a>
+            <ul id='students-dropdown' class='dropdown-content'>
+                {% for student_data in students_data %}
+                    <li>
+                        <a href="/{{course_class.course.code}}/{{course_class.code}}/assignments/{{student_data.id}}">
+                            {{student_data.full_name}}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+        
+    {% if assignment_items_data != None %}
+        <header id='student-header' class='flow-text'>
+            <h1 id='student-name'>
+                {{enrollment.student.full_name}}
+            </h1>
+            <h2 id='student-total-score'>
+                {{enrollment.total_score}} XP
+                <span id="lives" class="secondary-color-text">
+                {% for i in enrollment.course_class.total_of_lives|range %}
+                    <i class="material-icons">
+                        {%if i < enrollment.remaining_lives %}
+                            favorite
+                        {%else%}
+                            favorite_border
+                        {%endif%}
+                    </i>
+                {% endfor %}
+                </span>
+            </h2>
+            <ul id='achievement-list'>
+                {% for achievement_data in achievements_data %}
+                    <li class="{% if achievement_data.percentage < 1 %} badge-incomplete {% else %} badge-complete {% endif %} tooltipped" data-position="bottom" data-name="{{achievement_data.name}}" data-description="{{achievement_data.description}}" data-icon="{{achievement_data.icon}}">
+                        <img class="badge-image" src="{{achievement_data.icon}}">
+                        {% if achievement_data.percentage < 1 and achievement_data.show_progress %}
+                            <div class="badge-percentage primary-color-text">{{achievement_data.percentage_integer}}%</div>
+                            <svg class='badge-progress' viewBox="0 0 140 140">
+                                <circle class='badge-circle' style='stroke-dashoffset: {{achievement_data.percentage|to_stroke_dashoffset}};'/>
+                            </svg>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </header>
+    
+        <ul id='assignment-list'>
+            {% for assignment_item in assignment_items_data %}
+                <li class="assignment-list-item card">
+                    <div class="card-content grey lighten-4">
+                        <span class="assignment-name card-title activator grey-text text-darken-4">
+                            {{assignment_item.name}}
+                            <!-- <i class="material-icons right">more_vert</i> -->
+                        </span>
+                        <p class='assignment-description'>{{assignment_item.description}}</p> 
+                    </div>
+                    <div class="card-action">
+                        <div class='assignment-score'>
+                            {% if assignment_item.total_grade_percentage != None %}
+                                <div class='assignment-min-max'>
+                                    <small>0 XP</small>
+                                    <small>{{assignment_item.total_task_points}} XP</small>
+                                </div> 
+
+                                <div class="progress light-primary-color">
+                                    <div class="determinate primary-color" style="width: {{assignment_item.total_grade_percentage|safe}}%"></div>
+                                </div>
+                            {% endif %}
+
+                            {% if assignment_item.total_grade_points != None %}
+                                <div class="assignment-score-value">
+                                    <h5 class='assignment-score-points xp-label'>
+                                        {{assignment_item.total_grade_points}} XP
+                                    </h5>
+                                    {% if assignment_item.total_grade_percentage != None %}
+                                        <h5 class='assignment-score-points percentage-label'>
+                                            {{assignment_item.total_grade_percentage}} %
+                                        </h5>
+                                        
+                                        {% if assignment_item.total_grade_percentage != None %}
+                                            <div class="xp-percentage-switch">
+                                                <a class="score-switch xp-switch" href='#!'>XP</a>
+                                                <a class="score-switch percentage-switch" href='#assignment-list'>%</a>
+                                            </div>
+                                        {% endif %}
+                                    {% endif %}
+                                </div>
+                            {% else %}
+                                <small class='assignment-no-points'>{% trans '(no points)' %}</small>
+                            {% endif %}
+                        </div>
+                        
+                        <ul class='task-list'>
+                            {% for task in assignment_item.tasks %}
+                                {% if task.grade_points != None or not task.is_optional %}
+                                    <li class='task-list-item {% if task.grade_is_canceled or task.grade_points < 0 %}red-text{% endif %} {% if task.is_optional %}optional{% endif %}'>
+                                        {% if task.grade_is_canceled or task.grade_points < 0 %}
+                                            <i class="material-icons circle-icon">remove_circle</i>
+                                        {% elif task.grade_points == None %}
+                                            <i class="material-icons no-grade-icon">lens</i>
+                                        {% elif task.task_points == None %}
+                                            <i class="material-icons circle-icon secondary-color-text">
+                                                add_circle
+                                            </i>
+                                        {% else %}
+                                            <i class="material-icons secondary-color-text">
+                                                {% if task.grade_percentage == 100 %}
+                                                    star
+                                                {% elif task.grade_percentage >= 50 %}
+                                                    star_half
+                                                {% else %}
+                                                    star_border
+                                                {% endif %}
+                                            </i>
+                                        {% endif %}
+
+                                        <span class='task-name truncate'>
+                                             {{task.name}}
+                                         </span>
+                                        
+                                        {% if task.grade_is_canceled %}
+                                            <span class='task-points badge red-text'>{% trans 'CANCELED' %}</span>
+                                        {% elif task.task_points == None %}
+                                            {% if task.grade_points >= 0 %}
+                                                <span class='task-points badge'>
+                                                    +{{task.grade_points}} XP
+                                                </span>
+                                            {% elif task.grade_points < 0 %}
+                                                <span class='task-points badge red-text'>
+                                                    –{{ task.grade_points|stringformat:"+d"|slice:"1:" }} XP
+                                                </span>
+                                            {% endif %}
+                                        {% elif task.grade_percentage != None %}
+                                            <span class='task-points badge xp-label'>
+                                                +{{task.grade_points}} XP
+                                            </span>
+                                            <span class='task-points badge percentage-label'>
+                                                {{task.grade_percentage}} %
+                                            </span>
+                                        {% endif %}
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock content %}

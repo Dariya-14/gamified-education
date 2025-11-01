@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>{{ assignment.name }}</h2>
+<form method="post">
+  {% csrf_token %}
+  {% for task in tasks %}
+    <div style="margin-bottom: 20px;">
+      <strong>{{ forloop.counter }}. {{ task.task.text }}</strong><br>
+      <input type="text" name="answer_{{ task.id }}" placeholder="Ваш ответ" required>
+    </div>
+  {% endfor %}
+  <button type="submit">Отправить</button>
+</form>
+{% endblock %}

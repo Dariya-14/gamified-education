@@ -1,0 +1,40 @@
+{% extends "course/base.html" %} 
+{% load i18n %}
+
+{% block content %}
+    <div class="row">
+        <div class="col s12 m8 offset-m2 l6 offset-l3">
+            <div class="card">
+                <div class="card-content">
+                    <h1 class="card-title">{% translate "Диагностический Тест" %}</h1>
+                    <h2>{{ assignment_task.task.name }}</h2>
+                    <p>{% translate "Пожалуйста, ответьте на следующие вопросы:" %}</p>
+                    <hr>
+
+                    <form method="POST" action="{% url 'course:submit_diagnostic_test' course_class.course.code course_class.code assignment_task.id %}">
+                        {% csrf_token %}
+
+                        {% for question in questions %}
+                            <div style="margin-bottom: 20px;">
+                                <p><strong>{{ forloop.counter }}. {{ question.text }}</strong></p>
+                                <div class="input-field">
+                                    <input type="text" id="q_{{ question.id }}" name="q_{{ question.id }}" required>
+                                    <label for="q_{{ question.id }}">{% translate "Ваш ответ" %}</label>
+                                </div>
+                            </div>
+                        {% empty %}
+                            <p class="red-text">{% translate "К сожалению, вопросы для этого теста еще не добавлены." %}</p>
+                        {% endfor %}
+
+                        {% if questions %}
+                            <button type="submit" class="btn waves-effect waves-light secondary-color">
+                                {% translate "Завершить Диагностику" %}
+                                <i class="material-icons right">check</i>
+                            </button>
+                        {% endif %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

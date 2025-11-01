@@ -1,0 +1,43 @@
+{% extends "course/base.html" %} 
+{% load i18n %}
+
+{% block content %}
+    <div class="row">
+        <div class="col s12 m8 offset-m2 l6 offset-l3">
+            <div class="card">
+                <div class="card-content">
+                    <h1 class="card-title">{% trans "Сдать Задание" %}</h1>
+                    <h2>{{ assignment_task.task.name }}</h2>
+
+                    <p class="flow-text">
+                        {% trans "Максимально доступно XP" %}: 
+                        <strong>{{ assignment_task.points }}</strong>
+                    </p>
+                    
+                    <p class="red-text">
+                        {% trans "Внимание: Эта форма просто регистрирует сдачу. При нажатии кнопки 'Сдать' вы автоматически получите 100% XP." %}
+                    </p>
+
+                    <form method="POST" action="{% url 'submit_assignment_score' course_class.course.code course_class.code assignment_task.id %}">
+                        {% csrf_token %}
+                        
+                        <div class="input-field">
+                            <textarea id="student_answer" name="student_answer" class="materialize-textarea"></textarea>
+                            <label for="student_answer">{% trans "Ваш ответ / Комментарий (необязательно)" %}</label>
+                        </div>
+                        
+                        <button type="submit" class="btn waves-effect waves-light secondary-color">
+                            {% trans "Сдать Задание и Получить XP" %}
+                            <i class="material-icons right">send</i>
+                        </button>
+                        
+                        <a href="{% url 'assignments' course_class.course.code course_class.code %}?student_id={{ enrollment.student.id }}" class="btn-flat waves-effect">
+                            {% trans "Отмена" %}
+                        </a>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
